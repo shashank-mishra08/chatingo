@@ -1,0 +1,16 @@
+{
+  "name": "mern-chat-master",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "cd api && yarn start",
+    "client": "cd client && yarn dev",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}

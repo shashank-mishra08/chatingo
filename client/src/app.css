@@ -1,0 +1,26 @@
+.beautiful-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #84fab0, #8fd3f4, #84fab0);
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #84fab0, #8fd3f4, #84fab0) 1;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.beautiful-input::placeholder {
+  color: #666;
+}
+
+.beautiful-input:focus {
+  box-shadow: 0 0 5px #8fd3f4;
+  outline: none;
+}
