@@ -175,6 +175,7 @@ app.get('/messages/:userId', async (req, res) => {
       sender: { $in: [userId, ourUserId] },
       recipient: { $in: [userId, ourUserId] },
     }).sort({ createdAt: 1 }); // oldest first
+    console.log("sdsd", messages);  
 
     // ✅ Step 4: Return message list
     res.status(200).json(messages);
