@@ -1,6 +1,6 @@
 import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 import nebulaTexture from './assets/nebula.jpg';
@@ -48,11 +48,13 @@ function RealisticPlanetBackground() {
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
 
+          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
+
           <Nebula />
 
-          <Planet texture={planet1Texture} size={1.5} position={[5, 0, -10]} speed={0.001} />
-          <Planet texture={planet2Texture} size={1} position={[-10, 2, -20]} speed={0.002} />
-          <Planet texture={planet3Texture} size={2} position={[15, -2, -30]} speed={0.0005} />
+          <Planet texture={planet1Texture} size={2.5} position={[5, 0, 10]} speed={0.001} />
+          <Planet texture={planet2Texture} size={1.5} position={[-10, 2, 0]} speed={0.002} />
+          <Planet texture={planet3Texture} size={3} position={[15, -2, -5]} speed={0.0005} />
 
           <OrbitControls enableZoom={true} enablePan={true} autoRotate autoRotateSpeed={0.1} />
         </Suspense>
