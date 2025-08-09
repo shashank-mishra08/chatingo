@@ -4,7 +4,11 @@ module.exports = {
     "./src/*.jsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cursive: ['Pacifico', 'cursive'],
+      },
+    },
   },
   plugins: [],
 }
