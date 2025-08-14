@@ -73,7 +73,7 @@ app.use(cookieParser());
 // 🧠 By default, browser block kar deta hai aisi cross-domain requests.
 // Ye line likhne se React backend se freely baat kar paata hai.
 app.use(cors({
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : ['http://localhost:5173', 'http://localhost:5173/'], // React app ka URL
+  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : ['http://localhost:5173', 'https://chatingo.vercel.app'], // React app ka URL
   credentials: true, // Cookies ko allow karta hai
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
@@ -90,12 +90,7 @@ app.use(cors({
   // Jaise: origin: ['http://localhost:5173', 'https://your-production-domain.com']
 //  isme humne origin me sirf localhost:5173 diya hai, kyuki
   // humara React app wahi pe run ho raha hai
-  // Agar production me deploy karte hain, to yahan production URL dena padega
-  // Jaise: origin: ['https://your-production-domain.com']
-  // Agar tu multiple origins allow karna chahta hai, to unhe array me dal sakta hai
-  // Jaise: origin: ['http://localhost:5173', 'https://your-production-domain.com']
-  // isme humne origin me sirf localhost:5173 diya hai, kyuki
-  // humara React app wahi pe run ho raha hai
+  
 }));
 
 // ================== 4. Helper Function to Get User Data from Request =========================
