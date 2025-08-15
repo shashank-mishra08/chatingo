@@ -77,10 +77,6 @@ app.use(cors({
   credentials: true, // Cookies ko allow karta hai
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  preflightContinue: false, // Preflight request ke baad response send karega
-  optionsSuccessStatus: 204, // Preflight request ka success status code
-  exposedHeaders: ['Content-Length', 'X-Requested-With'], // Exposed headers for client-side access
-  maxAge: 86400, // Preflight request cache duration in seconds (1 day)
   // isme humne origin me sirf localhost:5173 diya hai, kyuki
   // humara React app wahi pe run ho raha hai. Agar production me deploy karte
   // hain, to yahan production URL dena padega.
