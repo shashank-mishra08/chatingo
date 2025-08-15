@@ -111,7 +111,7 @@ export default function Chat() {
 
   useEffect(() => {
     axios.get('/people').then(res => {
-      const offlinePeopleArr = res.data
+      const offlinePeopleArr = res.data.users
         .filter(p => p._id !== id)
         .filter(p => !Object.keys(onlinePeople).includes(p._id));
       const offlinePeople = {};
