@@ -73,7 +73,7 @@ app.use(cookieParser());
 // 🧠 By default, browser block kar deta hai aisi cross-domain requests.
 // Ye line likhne se React backend se freely baat kar paata hai.
 app.use(cors({
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : ['http://localhost:5173', 'https://chatingo.vercel.app'], // React app ka URL
+  origin:process.env.CORS_ORIGIN.split(','), // React app ka URL
   credentials: true, // Cookies ko allow karta hai
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
