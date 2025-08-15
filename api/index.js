@@ -339,7 +339,7 @@ app.post('/login', async (req,res) => {
           return res.status(500).json({ error: 'Token generation failed' });
         }
         // 5. ✅ Set cookie and respond
-        res.cookie('token', token, {sameSite:'lax', secure:false, httpOnly:true, maxAge: 1*24*60*60*1000, }).status(200).json({
+        res.cookie('token', token, {sameSite:'none', secure:true, httpOnly:true, maxAge: 1*24*60*60*1000, }).status(200).json({
           id: foundUser._id,
           username: foundUser.username,
           message: "User logged in successfully ✅",
@@ -436,7 +436,7 @@ app.post('/logout', (req,res) => {
           return res.status(500).json({ error: 'Token generation failed' });
         }
         // // 6. ✅ Send token in cookie and response
-      res.cookie('token', token, {sameSite:'lax', secure:false, httpOnly: true, // 🍪 Prevent JS access to cookie
+      res.cookie('token', token, {sameSite:'none', secure:true, httpOnly: true, // 🍪 Prevent JS access to cookie
             maxAge: 7 * 24 * 60 * 60 * 1000 }).status(201).json({
            id: createdUser._id,
             username: createdUser.username,
