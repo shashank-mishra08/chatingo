@@ -20,8 +20,13 @@ export function UserContextProvider({children}) {
     // axios ek library hai jo HTTP requests (jaise GET, POST) banane ke liye use hoti hai.
     //  Yahan iska use server se user ka data fetch karne ke liye hoga.
     axios.get('/profile').then(response => {
-      setId(response.data.userId);         
-      setUsername(response.data.username);
+      if (response.data.user) {
+        setId(response.data.user.userId);
+        setUsername(response.data.user.username);
+      }
+    }).catch(error => {
+      console.error("Failed to fetch profile:", error);
+      // Handle error if needed, e.g., redirect to login
     });
   }, []);
   return (
