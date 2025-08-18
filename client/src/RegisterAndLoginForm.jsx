@@ -99,9 +99,9 @@ export default function RegisterAndLoginForm() {
                    onChange={event => setUsername(event.target.value)}
                    type="text" 
                    placeholder="Enter Your Username"
-                   className="block w-full rounded-lg  p-3 mb-4 border border-gray-300 focus:border-blue-500
+                   className=" text-black block w-full rounded-lg  p-3 mb-4 border border-gray-300 focus:border-blue-500
                    shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500  focus:ring-opacity-50
-                   transition-all duration-300 ease-in-out text-white font-medium bg-transparent
+                   transition-all duration-300 ease-in-out  font-medium bg-transparent
                    "
                   />
 
@@ -112,7 +112,7 @@ export default function RegisterAndLoginForm() {
                    placeholder="Enter Your Password"
                    className="block w-full rounded-lg  p-3 mb-4 border border-gray-300 focus:border-blue-500
                    shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500  focus:ring-opacity-50
-                   transition-all duration-300 ease-in-out text-white font-medium bg-transparent
+                   transition-all duration-300 ease-in-out text-black font-medium bg-transparent
                    "
                   />
 {/* =================================================== */}
