@@ -181,19 +181,6 @@ export default function Chat() {
       </div>
       <div className={"flex flex-col chat-main p-2 " + (theme === 'light' ? 'bg-blue-50' : 'bg-gray-600') + (selectedUserId ? ' flex' : ' hidden sm:flex')}>
         <div className="flex-grow">
-          {!!selectedUserId && (
-            <div className="flex items-center mb-2">
-              <button onClick={() => setSelectedUserId(null)} className="sm:hidden text-gray-500 mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                </svg>
-              </button>
-              <div className="flex items-center">
-                 <Avatar online={onlinePeople.hasOwnProperty(selectedUserId)} username={onlinePeople[selectedUserId] || offlinePeople[selectedUserId]?.username} userId={selectedUserId} />
-                 <span className="ml-2 font-bold">{onlinePeople[selectedUserId] || offlinePeople[selectedUserId]?.username}</span>
-              </div>
-            </div>
-          )}
           {!selectedUserId && (
             <div className="flex h-full flex-grow items-center justify-center">
               <div className={(theme === 'light' ? 'text-gray-300' : 'text-gray-400')}>&larr; Select a person from the sidebar</div>
@@ -201,7 +188,18 @@ export default function Chat() {
           )}
           {!!selectedUserId && (
             <div className="relative h-full">
-              <div className="overflow-y-scroll absolute top-0 left-0 right-0 bottom-2">
+               <div className="flex items-center mb-2">
+                  <button onClick={() => setSelectedUserId(null)} className="sm:hidden text-gray-500 mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                  </button>
+                  <div className="flex items-center">
+                     <Avatar online={onlinePeople.hasOwnProperty(selectedUserId)} username={onlinePeople[selectedUserId] || offlinePeople[selectedUserId]?.username} userId={selectedUserId} />
+                     <span className="ml-2 font-bold">{onlinePeople[selectedUserId] || offlinePeople[selectedUserId]?.username}</span>
+                  </div>
+                </div>
+              <div className="overflow-y-scroll absolute top-10 left-0 right-0 bottom-2">
                 {messagesWithoutDupes.map(message => (
                   <div key={message._id} className={(message.sender === id ? 'text-right': 'text-left')}>
                     <div className={"text-left inline-block p-2 my-2 rounded-md text-sm " +(message.sender === id ? 'bg-blue-500 text-white' : (theme === 'light' ? 'bg-white text-gray-500' : 'bg-gray-800 text-white'))}>
