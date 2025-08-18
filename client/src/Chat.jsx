@@ -136,8 +136,8 @@ export default function Chat() {
   const messagesWithoutDupes = uniqBy(messages, '_id');
 
   return (
-    <div className={"flex h-screen " + (theme === 'light' ? '' : 'bg-gray-800 text-white')}>
-      <div className={(theme === 'light' ? 'bg-white' : 'bg-gray-700') + " w-1/3 flex flex-col"}>
+    <div className={"flex h-screen chat-layout " + (theme === 'light' ? '' : 'bg-gray-800 text-white')}>
+      <div className={(theme === 'light' ? 'bg-white' : 'bg-gray-700') + " chat-sidebar flex flex-col"}>
         <div className="flex-grow">
           <Logo />
           {Object.keys(onlinePeopleExclOurUser).map(userId => (
@@ -176,7 +176,7 @@ export default function Chat() {
             className={"text-sm py-1 px-2 border rounded-sm " + (theme === 'light' ? 'bg-blue-100 text-gray-500' : 'bg-gray-600 text-gray-200')}>logout</button>
         </div>
       </div>
-      <div className={"flex flex-col w-2/3 p-2 " + (theme === 'light' ? 'bg-blue-50' : 'bg-gray-600')}>
+      <div className={"flex flex-col chat-main p-2 " + (theme === 'light' ? 'bg-blue-50' : 'bg-gray-600')}>
         <div className="flex-grow">
           {!selectedUserId && (
             <div className="flex h-full flex-grow items-center justify-center">
