@@ -92,7 +92,7 @@ export default function RegisterAndLoginForm() {
         </h1>
         {/* this form for registering user */}
         <Card>
-          <form className="w-75 mx-auto mb-12" onSubmit={handleSubmit}>
+          <form className="w-85 mx-auto mb-12" onSubmit={handleSubmit}>
 
 
             <input value={username}
