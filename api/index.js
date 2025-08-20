@@ -313,7 +313,7 @@ app.post('/login', async (req,res) => {
   if (foundUser) {
     const passOk = bcrypt.compareSync(password, foundUser.password);
          if (!passOk) {
-          console.log('Invalid password', password, foundUser.password);
+          console.log('Invalid password', foundUser.password);
       return res.status(401).json({ error: 'Invalid credentials, tumne galat password diya hai' });
     }
     // 4. ✅ Create token

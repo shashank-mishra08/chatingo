@@ -18,6 +18,7 @@ export default function Chat() {
   const {username,id,setId,setUsername} = useContext(UserContext);
   const divUnderMessages = useRef();
   const {theme, toggleTheme} = useTheme();
+  
 // web-socket connection
   useEffect(() => {
     connectToWs();
@@ -201,7 +202,10 @@ export default function Chat() {
             </div>
 
             {/* Message List (Scrollable) */}
-            <div className="flex-grow overflow-y-auto p-2">
+            <div 
+              className="flex-grow overflow-y-auto p-2 bg-cover bg-center"
+              style={{backgroundImage: `url('/src/assets/nebula.jpg')`}}
+            >
                 {messagesWithoutDupes.map(message => (
                   <div key={message._id} className={(message.sender === id ? 'text-right': 'text-left')}>
                     <div className={"text-left inline-block p-2 my-1 rounded-md text-sm " +(message.sender === id ? 'bg-blue-500 text-white' : (theme === 'light' ? 'bg-white text-gray-500' : 'bg-gray-800 text-white'))}>
